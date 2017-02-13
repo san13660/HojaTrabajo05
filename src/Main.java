@@ -1,8 +1,3 @@
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Main.java
  * Universidad del Valle de Guatemala
@@ -16,6 +11,10 @@ import java.util.List;
 
 
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     /**
@@ -26,27 +25,33 @@ public class Main {
         
     	TextoLeerEscribir varText = new TextoLeerEscribir();
     	
+    	// Se escriben los numeros aleatorios en el archivo de texto
     	varText.escribirTexto(3000);
     	
+    	// Se lee el archivo y se guarda en una lista de Strings
     	List<String> listaStrings = varText.leerLineas();
     	
+    	// Se guarda la lista de Strings en una lista de Integers
     	int[] listaNumeros = new int[listaStrings.size()];
-    	
-    	ArrayList<Integer> listaTemp = new ArrayList<Integer>();
-    	
-    	for(String s : listaStrings) listaTemp.add(Integer.valueOf(s));
-    	
-    	for(int i = 0; i < listaTemp.size(); i++) {
-    	    if (listaTemp.get(i) != null) {
-    	    	listaNumeros[i] = listaTemp.get(i);
+    	for(int i = 0; i < listaStrings.size(); i++) {
+    	    if (listaStrings.get(i) != null) {
+    	    	listaNumeros[i] = Integer.valueOf(listaStrings.get(i));
     	    }
     	}
+    	
+    	
+    	//ArrayList<Integer> listaTemp = new ArrayList<Integer>();
+    	//for(String s : listaStrings) listaTemp.add(Integer.valueOf(s));
+    	
     	
     	/*for(int i=0; i<listaNumeros.length; i++){
     		System.out.println(listaNumeros[i]);
     	}*/
     	
+    	// LISTA INICIAL DE NUMEROS
 		System.out.println("Lista Inicial: " + Arrays.toString(listaNumeros));
+		
+		// LISTA ORDENADA CON MERGESORT
 		MergeSort.mergeSort(listaNumeros);
 		System.out.println("Lista Ordenada con Merge:  " + Arrays.toString(listaNumeros));
     	
