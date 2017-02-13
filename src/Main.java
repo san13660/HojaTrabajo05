@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,13 +30,25 @@ public class Main {
     	
     	List<String> listaStrings = varText.leerLineas();
     	
-    	ArrayList<Integer> listaNumeros = new ArrayList<Integer>();
+    	int[] listaNumeros = new int[listaStrings.size()];
     	
-    	for(String s : listaStrings) listaNumeros.add(Integer.valueOf(s));
+    	ArrayList<Integer> listaTemp = new ArrayList<Integer>();
     	
-    	for(int i=0; i<listaNumeros.size(); i++){
-    		System.out.println(listaNumeros.get(i));
+    	for(String s : listaStrings) listaTemp.add(Integer.valueOf(s));
+    	
+    	for(int i = 0; i < listaTemp.size(); i++) {
+    	    if (listaTemp.get(i) != null) {
+    	    	listaNumeros[i] = listaTemp.get(i);
+    	    }
     	}
+    	
+    	/*for(int i=0; i<listaNumeros.length; i++){
+    		System.out.println(listaNumeros[i]);
+    	}*/
+    	
+		System.out.println("Lista Inicial: " + Arrays.toString(listaNumeros));
+		MergeSort.mergeSort(listaNumeros);
+		System.out.println("Lista Ordenada con Merge:  " + Arrays.toString(listaNumeros));
     	
     }
     
