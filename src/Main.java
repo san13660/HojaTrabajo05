@@ -52,7 +52,18 @@ public class Main {
 		System.out.println("Lista Inicial: " + Arrays.toString(listaNumeros));
 		
 		// LISTA ORDENADA CON MERGESORT
-		MergeSort.mergeSort(listaNumeros);
+		//MergeSort.mergeSort(listaNumeros);
+		
+		// LISTA ORDENADA CON RADIX
+		//RadixSort.sort(listaNumeros);
+		
+		// LISTA ORDENADA CON GNOME
+		//GnomeSort.gnomeSort(listaNumeros);
+		
+		// LISTA ORDENADA CON QUICK
+		QuickSort quick = new QuickSort();
+		quick.sort(listaNumeros);
+		
 		System.out.println("Lista Ordenada con Merge:  " + Arrays.toString(listaNumeros));
     	
     }
