@@ -12,11 +12,13 @@
 
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Random;
 
 public class TextoLeerEscribir {
-	
-	private BufferedReader bf;
 
 	// Metodo para crear y escribir un nuevo archivo de texto
 	public void escribirTexto (int num) {
@@ -30,7 +32,7 @@ public class TextoLeerEscribir {
             // Se generan numeros aleatorios y se guardan en el archivo de texto
             Random r = new Random();
             for(int i=0; i<num; i++) {
-            	wr.write(r.nextInt(num) + " ");
+            	wr.write(r.nextInt(num) + "\n");
             }
         
             wr.close();
@@ -39,26 +41,8 @@ public class TextoLeerEscribir {
 	}
 	
 	// Metodo para leer un archivo de texto
-	public String textoLeer(){
-		File file;
-		file = new File("prueba.txt");
-	    
-        String texto = "";
-        
-        try {
-            bf = new BufferedReader(new FileReader(file));
-            String varTemporal = "";
-            String bfRead;
-            
-            while ((bfRead = bf.readLine()) !=null) {
-                varTemporal = varTemporal + bfRead;
-        }
-            texto = varTemporal;
-            
-        } catch(Exception e) {
-            System.out.println("VACIO");
-        }
-        
-        return texto; 
-    }
+	public List<String> leerLineas() throws IOException{
+		List<String> lines = Files.readAllLines(Paths.get("prueba.txt"), Charset.defaultCharset());
+		return lines;
+	}
 }
