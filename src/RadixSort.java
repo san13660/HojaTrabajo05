@@ -1,4 +1,16 @@
-//De: https://gist.github.com/yeison/5606963
+/**
+ * RadixSort.java
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos Seccion 10
+ * Hoja de Trabajo 3
+ * Christopher Sandoval 13660
+ * Fernanda Estrada 14198
+ * @author Christopher Sandoval
+ * @since 2/12/2017
+ * Tomado de https://gist.github.com/yeison/5606963
+ */
+
+
 
 public class RadixSort {
 	public static int[] sort(int[] input){
