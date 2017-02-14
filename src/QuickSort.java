@@ -5,6 +5,8 @@
  * Hoja de Trabajo 3
  * Christopher Sandoval 13660
  * Fernanda Estrada 14198
+ * Ana Lucia Diaz 151378
+ * Alejandro Vasquez
  * @author FER ESTRADA
  * @since 2/12/2017
  * Tomado de http://www.vogella.com/tutorials/JavaAlgorithmsQuicksort/article.html
@@ -12,59 +14,61 @@
 
 
 
-public class QuickSort  {
-        private int[] numbers;
-        private int number;
+public class QuickSort {
+	private int[] numbers;
+	private int number;
 
-        public void sort(int[] values) {
-                // check for empty or null array
-                if (values ==null || values.length==0){
-                        return;
-                }
-                this.numbers = values;
-                number = values.length;
-                quicksort(0, number - 1);
-        }
+	public void sort(int[] values) {
+		// Verificar si el array es null o esta vacio
+		if (values == null || values.length == 0) {
+			return;
+		}
+		this.numbers = values;
+		number = values.length;
+		quicksort(0, number - 1);
+	}
 
-        private void quicksort(int low, int high) {
-                int i = low, j = high;
-                // Get the pivot element from the middle of the list
-                int pivot = numbers[low + (high-low)/2];
+	private void quicksort(int low, int high) {
+		int i = low, j = high;
+		// Obtener el elemento pivote del medio de la lista
+		int pivot = numbers[low + (high - low) / 2];
 
-                // Divide into two lists
-                while (i <= j) {
-                        // If the current value from the left list is smaller then the pivot
-                        // element then get the next element from the left list
-                        while (numbers[i] < pivot) {
-                                i++;
-                        }
-                        // If the current value from the right list is larger then the pivot
-                        // element then get the next element from the right list
-                        while (numbers[j] > pivot) {
-                                j--;
-                        }
+		// Dividir en dos listas
+		while (i <= j) {
+			// Si el elemento actual de la lista de la izquierda es mas pequeno
+			// que el elemento pivote entocnes tomar el siguiente elemento de la
+			// lista de la izquierda
+			while (numbers[i] < pivot) {
+				i++;
+			}
+			// Si el elemento actual de la lista de la derecha es mayor que el
+			// elemento pivote entonces tomar el siguiente elemento de la lista
+			// de la derecha
+			while (numbers[j] > pivot) {
+				j--;
+			}
 
-                        // If we have found a values in the left list which is larger then
-                        // the pivot element and if we have found a value in the right list
-                        // which is smaller then the pivot element then we exchange the
-                        // values.
-                        // As we are done we can increase i and j
-                        if (i <= j) {
-                                exchange(i, j);
-                                i++;
-                                j--;
-                        }
-                }
-                // Recursion
-                if (low < j)
-                        quicksort(low, j);
-                if (i < high)
-                        quicksort(i, high);
-        }
+			// Si encontramos un valor en la lista izquierda que sea mayor que
+			// el elemento pivote y
+			// si encontramos un valor en la lista de la derecha que sea menor
+			// que el elemento pivote,
+			// se intercambian cambian los valores.
+			if (i <= j) {
+				exchange(i, j);
+				i++;
+				j--;
+			}
+		}
+		// Recursion
+		if (low < j)
+			quicksort(low, j);
+		if (i < high)
+			quicksort(i, high);
+	}
 
-        private void exchange(int i, int j) {
-                int temp = numbers[i];
-                numbers[i] = numbers[j];
-                numbers[j] = temp;
-        }
+	private void exchange(int i, int j) {
+		int temp = numbers[i];
+		numbers[i] = numbers[j];
+		numbers[j] = temp;
+	}
 }

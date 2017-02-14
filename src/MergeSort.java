@@ -5,6 +5,8 @@
  * Hoja de Trabajo 3
  * Christopher Sandoval 13660
  * Fernanda Estrada 14198
+ * Ana Lucia Diaz 151378
+ * Alejandro Vasquez
  * @author Christopher Sandoval
  * @since 2/12/2017
  * Tomado de https://www.buildingjavaprograms.com/code_files/4ed/ch13/MergeSort.java

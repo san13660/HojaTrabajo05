@@ -5,6 +5,8 @@
  * Hoja de Trabajo 3
  * Christopher Sandoval 13660
  * Fernanda Estrada 14198
+ * Ana Lucia Diaz 151378
+ * Alejandro Vasquez
  * @author FER ESTRADA
  * @since 2/12/2017
  */
